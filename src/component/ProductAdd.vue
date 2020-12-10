@@ -30,7 +30,7 @@
                         class="form-control"></textarea>
             </div>
             <hr>
-            <button class="btn btn-primary">Kaydet</button>
+            <button @click="saveProduct" class="btn btn-primary">Kaydet</button>
           </div>
         </div>
       </div>
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import axios from "axios";
   export default {
     data(){
       return {
@@ -49,8 +50,17 @@
           imageUrl : "",
           price : "",
           description :""
-        },
-        data : null
+        }
+      }
+    },
+    methods : {
+      saveProduct(){
+        axios.post("/product.json",{ ...this.product })
+        .then(response => {
+          alert("Kayıt Eklendi")
+        }).catch(error => {
+          alert(error)
+        })
       }
     }
   }
