@@ -49,7 +49,8 @@
           imageUrl : "",
           price : "",
           description :""
-        }
+        },
+        data : null
       }
     }
   }
