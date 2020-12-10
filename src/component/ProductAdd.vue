@@ -5,7 +5,7 @@
       <div class="col-md-4">
         <div class="card">
           <div class="card-header">
-            <h3>Ürün Bilgiler</h3>
+            <h3>Ürün Bilgileri</h3>
           </div>
           <div class="card-body">
             <div class="form-group">
@@ -58,6 +58,8 @@ import axios from "axios";
         axios.post("/product.json",{ ...this.product })
         .then(response => {
           alert("Kayıt Eklendi")
+          this.$router.replace("/")
+          this.product = ""
         }).catch(error => {
           alert(error)
         })

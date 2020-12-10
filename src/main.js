@@ -3,8 +3,16 @@ import App from './App.vue'
 import {router} from "./router";
 import store from "./store"
 import axios from "axios";
+import VueResource from "vue-resource"
 
 axios.defaults.baseURL ="https://vue-product-4676b-default-rtdb.firebaseio.com"
+
+Vue.use(VueResource)
+
+Vue.filter ("currency",(value) =>{
+  return "₺" +  parseFloat(value).toLocaleString(undefined,{minimumFractionDigits : 2})
+
+})
 
 new Vue({
   el: '#app',

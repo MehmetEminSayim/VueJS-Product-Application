@@ -46,5 +46,6 @@ a {
 }
 body{
   background-color: #f2f2f2;
+  margin-bottom:100px ;
 }
 </style>
