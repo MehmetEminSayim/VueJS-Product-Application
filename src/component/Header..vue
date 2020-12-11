@@ -18,10 +18,10 @@
             <a>Ürün Ekle</a></li>
           </router-link>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <router-link tag="li" exact to="/auth" active-class="active">
-            <a href="#"><span class="glyphicon glyphicon-user"></span> Login</a>
-          </router-link>
+        <ul class="nav navbar-nav navbar-right" :class="logoutClass"  >
+          <li>
+            <a href="" @click.prevent="logout">Çıkış Yap</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -30,6 +30,22 @@
 
 <script>
  export default {
+   data(){
+     return {
 
+     }
+   },
+   methods : {
+     logout(){
+       this.$store.dispatch("logout")
+     }
+   },
+   computed: {
+     logoutClass() {
+       return {
+         'hidden': !this.$store.getters.isAuthed
+       }
+     }
+   },
  }
 </script>
