@@ -23,7 +23,7 @@
             <div class="form-group">
               <label>Parola Tekrar</label>
               <input :class="{'is-invalid' : $v.userRegister.rePass.$error}" v-model="$v.userRegister.rePass.$model" type="password" class="form-control" placeholder="Şifrenizi tekrar giriniz">
-              <small class="form-text text-muted" v-if="!$v.userRegister.rePass.sameAs">Lütfen paraloları aynı giriniz.</small>
+              <small class="form-text text-muted" v-if="!$v.userRegister.rePass.sameAs">Lütfen paraloları aynı giriniz.</small><br>
               <small class="form-text text-muted" v-if="!$v.userRegister.rePass.minLength">Lütfen parolayı en az 6 haneli giriniz.</small>
             </div>
             <hr>

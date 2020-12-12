@@ -37,7 +37,11 @@
    },
    methods : {
      logout(){
-       this.$store.dispatch("logout")
+       if (confirm("Çıkmak istediğinize emin misiniz ?")){
+         this.$store.dispatch("logout")
+       }else{
+         return false
+       }
      }
    },
    computed: {
